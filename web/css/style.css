@@ -1,0 +1,45 @@
+body {
+    font-family:'Open Sans';
+    background:#EEE;
+}
+* {
+    -moz-transition:0.2s all ease-in ;
+    -webkit-transition:0.3s all ease-in ;
+    transition:0.2s all ease-in ;
+}
+
+img{
+    outline:7px solid white;
+    margin:20px;
+}
+
+img.orange:hover{
+    border-radius:0 0 4px #222;
+    outline:7px solid #FF8A00;
+}
+
+img.violet:hover{
+    border-radius:0 0 4px #222;
+    outline:7px solid #9A00FF;
+}
+
+img:active,img:focus {
+    outline:none !important;
+}
+.container {
+    width:1280px;
+    margin:80px auto;
+    text-align:center;
+    border:1px solid #DDD;
+    padding:20px;
+    background:#EEE;
+    margin-bottom:0px;
+}
+h2 {
+    color:#AAA;
+    font-size:20px;
+    letter-spacing:6px;
+    margin:20px auto;
+    width:1280px;
+    text-align:center;
+}

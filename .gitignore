@@ -1,0 +1,8 @@
+/app/config/config.js
+/node_modules/*
+!/node_modules/konsserto
+!/node_modules/ks-npm
+/node_modules/konsserto/node_modules
+._*
+.DS_Store
+/.idea

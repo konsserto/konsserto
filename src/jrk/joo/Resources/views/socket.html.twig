@@ -1,0 +1,29 @@
+{{ lol }}<script src="/socket.io/socket.io.js"></script>
+{{ socket }}
+abc
+d
+<input type="button" value="s1" onclick="s1()" />
+<input type="button" value="s2" onclick="s2()" />
+<script>
+    io = io.connect("http://localhost:3000")
+
+    function s1() {
+        console.log("js s1");
+        io.emit('s1')
+    }
+
+    function s2() {
+        console.log("js s2");
+        io.emit('lol/s2')
+    }
+
+    // Listen for the talk event.
+    io.on('talk', function(data) {
+        alert(data.message)
+    })
+
+    io.on('announce', function(data) {
+        console.log('<p>'+data.message+ new Date().toString()+'</p>')
+    })
+
+</script>

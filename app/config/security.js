@@ -1,0 +1,24 @@
+security = {
+	ssl_protocol: {
+		active: false,
+		key: 'touch/key.pem',
+		certificate: 'touch/cert.pem',
+		headers_allowed: [
+			{
+				name: 'Access-Control-Allow-Origin',
+				value: '*'
+			},
+			{
+				name: 'Access-Control-Allow-Methods',
+				value: 'PUT, GET, POST, DELETE, OPTIONS, HEAD, PATCH'
+			},
+			{
+				name: 'Access-Control-Allow-Headers',
+				value: 'Content-Type'
+			}
+		]
+	}
+
+};
+
+module.exports = security;
