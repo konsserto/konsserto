@@ -3,6 +3,6 @@ Konsserto
 
 A nice NodeJS Framework, really !
 
-We need you ! Don't hesitate and contact us at: konsserto@gmail.com
+We need you ! Feel free to contact us at: konsserto@gmail.com
 
 More info: http://www.konsserto.com
