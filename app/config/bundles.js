@@ -1,6 +1,5 @@
 var bundles = [
     use('@Konsserto/Bundle/FrameworkBundle/FrameworkBundle'),
-    use('@Konsserto/Bundle/NodeORMBundle/NodeORMBundle'),
     use('@Konsserto/Bundle/TwigBundle/TwigBundle'),
     use('@jrk/joo/jrkjoobundle')
 ];
