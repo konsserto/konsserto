@@ -1,8 +1,0 @@
-{
-    "name": "LOKRestBundle",
-    "version": "0.0.1",
-    "author": "Devlic Team",
-    "dependencies": {
-        "easyxml": "*"
-    }
-}

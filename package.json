@@ -17,6 +17,7 @@
         "gulp-clean": "^0.3.1",
         "gulp-nodemon": "^1.0.4",
         "gulp-sourcemaps": "*",
+        "gulp-mocha": "*",
         "konsserto": "*",
         "ks-npm": "*"
     }

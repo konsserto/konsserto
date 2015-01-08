@@ -4,6 +4,7 @@ var plumber = require('gulp-plumber');
 var clean = require('gulp-clean');
 var nodemon = require('gulp-nodemon');
 var CONFIG = require('./app/config/config')
+var mocha = require('gulp-mocha');
 var k,input;
 
 var namespaces = require('ks-npm')
@@ -77,6 +78,10 @@ gulp.task('kernel', ['coffee'], function () {
 	}
 });
 
+gulp.task('mocha', ['kernel'], function () {
+    return gulp.src('./test/**/*.js', {read: false})
+        .pipe(mocha({reporter: 'list'}));
+});
 
 gulp.task('remove', function () {
     if (input.getOption('keep-js'))
@@ -92,4 +97,4 @@ gulp.task('shutdown', ['remove'], function () {
     return k.shutdown(0);
 });
 
-gulp.start('kernel');
+gulp.start('mocha');

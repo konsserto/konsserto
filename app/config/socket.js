@@ -1,5 +1,5 @@
 var socket = [
-	{
+	/*{
 		name: 'socket_starting',
 		controller: 'jrkjoobundle:Socket:c',
 		connection: true
@@ -13,15 +13,19 @@ var socket = [
 		name: 'socket_prefix',
 		resource: '@jrk/joo/Resources/config/socket.js',
 		prefix: 'lol/'
-	}
+	}*/
 
 ];
 
-socket.push({
+/*socket.push({
  	name: 'devlic_socketexample_chat_import',
  	resource: '@Devlic/SocketExample/ChatBundle/Resources/config/socket.js'
- });
+ });*/
 
+socket.push({
+ 	name: 'mf_test_import',
+ 	resource: '@MF/TestBundle/Resources/config/socket.js'
+ });
 module.exports = socket;
 
 

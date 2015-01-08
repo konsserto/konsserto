@@ -1,10 +1,8 @@
 var bundles = [
     use('@Konsserto/Bundle/FrameworkBundle/FrameworkBundle'),
-    use('@Konsserto/Bundle/TwigBundle/TwigBundle'),
-    use('@jrk/joo/jrkjoobundle')
+    use('@Konsserto/Bundle/TwigBundle/TwigBundle')
 ];
 
-bundles.push(use('@JRK/HelloBundle/JRKHelloBundle'));
 //bundles.push(use('@LOK/RestBundle/LOKRestBundle'));
-bundles.push(use('@Devlic/SocketExample/ChatBundle/DevlicSocketExampleChatBundle'));
+bundles.push(use('@MF/TestBundle/MFTestBundle'));
 module.exports = bundles;
