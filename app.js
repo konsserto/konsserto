@@ -5,7 +5,7 @@ var clean = require('gulp-clean');
 var nodemon = require('gulp-nodemon');
 var CONFIG = require('./app/config/config')
 var mocha = require('gulp-mocha');
-var k,input;
+var k, input;
 
 var namespaces = require('ks-npm')
 var bundle = Object.keys(namespaces);
@@ -13,26 +13,26 @@ var tasks = []
 var tasks_ignore = ['']
 
 bundle.forEach(function (taskName) {
-	if (tasks_ignore.indexOf(taskName) < 0) {
-		tasks.push(taskName)
-		gulp.task(taskName, function () {
-			var req = namespaces[taskName];
-			var ext = req + '**/*.coffee'
-			return gulp.src(ext)
-				.pipe(plumber({
-/**
- * Description
- * @method errorHandler
- * @param {} err
- * @return 
- */
-errorHandler: function (err) {
-					console.log(err);
-				}}))
-				.pipe(coffee({bare: true}))
-				.pipe(gulp.dest(req));
-		});
-	}
+    if (tasks_ignore.indexOf(taskName) < 0) {
+        tasks.push(taskName)
+        gulp.task(taskName, function () {
+            var req = namespaces[taskName];
+            var ext = req + '**/*.coffee'
+            return gulp.src(ext)
+                .pipe(plumber({
+                    /**
+                     * Description
+                     * @method errorHandler
+                     * @param {} err
+                     * @return
+                     */
+                    errorHandler: function (err) {
+                        console.log(err);
+                    }}))
+                .pipe(coffee({bare: true}))
+                .pipe(gulp.dest(req));
+        });
+    }
 });
 
 
@@ -40,42 +40,49 @@ gulp.task('coffee', tasks, function () {
     process.stdin.pause();
     return gulp.src(['src/**/*.coffee'])
         .pipe(plumber({
-/**
- * Description
- * @method errorHandler
- * @param {} err
- * @return 
- */
-errorHandler: function (err) {
-            console.log(err);
-        }}))
+            /**
+             * Description
+             * @method errorHandler
+             * @param {} err
+             * @return
+             */
+            errorHandler: function (err) {
+                console.log(err);
+            }}))
         .pipe(coffee({bare: true}))
         .pipe(gulp.dest('src'))
 });
 
 
 gulp.task('kernel', ['coffee'], function () {
-	var Kernel = require('konsserto');
-	var ArgvInput = use('@Konsserto/Component/Console/Input/ArgvInput')
-	var InputOption = use('@Konsserto/Component/Console/Input/InputOption')
-	var InputDefinition = use('@Konsserto/Component/Console/Input/InputDefinition')
-	var definition = new InputDefinition([new InputOption('--nodemon', '-n'),new InputOption('--keep-js', '-k')])
-	input = new ArgvInput(process.argv,definition,null,true)
+    var Kernel = require('konsserto');
+    var ArgvInput = use('@Konsserto/Component/Console/Input/ArgvInput')
+    var InputOption = use('@Konsserto/Component/Console/Input/InputOption')
+    var InputDefinition = use('@Konsserto/Component/Console/Input/InputDefinition')
+    var definition = new InputDefinition([new InputOption('--nodemon', '-n'), new InputOption('--keep-js', '-k')])
+    input = new ArgvInput(process.argv, definition, null, true)
 
-	if (input.getOption('nodemon')) {
-		nodemon({ script: 'start.js',ext: 'html twig css less coffee', ignore: ['node_modules/*','*.js'] })
-			.on('change', ['coffee'])
-			.on('restart', function () {
-				console.log('Konsserto restarted !')
-			}
-		)
-	} else {
-		k = new Kernel;
-		k.start(require('./app/config/config').port);
-		process.on('SIGINT', function () {
-			gulp.start('shutdown')
-		});
-	}
+    if (input.getOption('nodemon')) {
+        nodemon({ script: 'start.js', ext: 'html twig css less coffee', ignore: ['node_modules/*', '*.js'] })
+            .on('change', ['coffee'])
+            .on('restart', function () {
+                console.log('Konsserto restarted !')
+            }
+        )
+    } else {
+        k = new Kernel;
+        configs = require('./app/config/config');
+
+        port = 3000;
+        if (configs.port) {
+            port = configs.port;
+        }
+
+        k.start(port);
+        process.on('SIGINT', function () {
+            gulp.start('shutdown')
+        });
+    }
 });
 
 gulp.task('mocha', ['kernel'], function () {
