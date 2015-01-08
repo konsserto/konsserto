@@ -5,9 +5,9 @@ var clean = require('gulp-clean');
 var k, a, exitCode = -1;
 
 
-var namespaces = require('ks-npm')
+var namespaces = require('ks-npm');
 var bundle = Object.keys(namespaces);
-var tasks = []
+var tasks = [];
 
 bundle.forEach(function(taskName) {
 	tasks.push(taskName)
