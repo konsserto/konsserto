@@ -1,5 +1,4 @@
-var
-gulp = require('gulp'),
+var gulp = require('gulp'),
 coffee = require('gulp-coffee'),
 plumber = require('gulp-plumber');
 

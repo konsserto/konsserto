@@ -10,10 +10,10 @@ var bundle = Object.keys(namespaces);
 var tasks = [];
 
 bundle.forEach(function(taskName) {
-	tasks.push(taskName)
+	tasks.push(taskName);
 	gulp.task(taskName, function() {
 		var req = namespaces[taskName];
-		var ext = req+'**/*.coffee'
+		var ext = req+'**/*.coffee';
 		return gulp.src(ext)
 			.pipe(plumber({errorHandler: function (err) {
 				console.log(err);
@@ -33,7 +33,7 @@ gulp.task('coffee', tasks,function () {
 			console.log(err);
 		}}))
 		.pipe(coffee({bare: true}))
-		.pipe(gulp.dest('src'))
+		.pipe(gulp.dest('src'));
 });
 
 
@@ -50,7 +50,7 @@ gulp.task('konsole',['coffee'],function(){
 	a = new Application(k);
 	exitCode = a.run(input)
 	if (exitCode == 0)
-		gulp.start('shutdown')
+		gulp.start('shutdown');
 	return true;
 });
 
