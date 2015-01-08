@@ -7,10 +7,10 @@ var CONFIG = require('./app/config/config')
 var mocha = require('gulp-mocha');
 var k, input;
 
-var namespaces = require('ks-npm')
+var namespaces = require('ks-npm');
 var bundle = Object.keys(namespaces);
-var tasks = []
-var tasks_ignore = ['']
+var tasks = [];
+var tasks_ignore = [''];
 
 bundle.forEach(function (taskName) {
     if (tasks_ignore.indexOf(taskName) < 0) {
