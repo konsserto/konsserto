@@ -23,14 +23,11 @@ var routing = [
 ];
 
 
-//routing.push({
-// 	name: 'lok_rest_import',
-// 	resource: '@LOK/RestBundle/Resources/config/routing.js'
-// });
-
 
 routing.push({
  	name: 'mf_test_import',
  	resource: '@MF/TestBundle/Resources/config/routing.js'
  });
+
+
 module.exports = routing;

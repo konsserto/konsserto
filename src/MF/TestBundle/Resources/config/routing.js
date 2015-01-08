@@ -1,7 +1,7 @@
 var routing = [
     {
         name: 'mftest',
-        pattern: '/home/:name',
+        pattern: '/home/{name}',
         controller: 'MFTestBundle:Hello:index'
     }
 ];
