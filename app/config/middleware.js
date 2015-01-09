@@ -4,7 +4,7 @@
  */
 
 middlewares = [
-    {name: "MyMiddleware", middleware: "MFTestBundle:Hello:hello"}
+   // {name: "MyMiddleware", middleware: "MFTestBundle:Hello:hello"}
 ];
 
 module.exports = middlewares;
