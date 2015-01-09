@@ -1,21 +1,19 @@
 security = {
-    global: {
-        xssProtection: false, // facultatif, par defaut à true
-        headers_allowed: [
-            {
-                name: 'Access-Control-Allow-Origin',
-                value: '*'
-            },
-            {
-                name: 'Access-Control-Allow-Methods',
-                value: 'PUT, GET, POST, DELETE, OPTIONS, HEAD, PATCH'
-            },
-            {
-                name: 'Access-Control-Allow-Headers',
-                value: 'Content-Type'
-            }
-        ]
-    },
+    xssProtection: false, // facultatif, par defaut à true
+    headers_allowed: [
+        {
+            name: 'Access-Control-Allow-Origin',
+            value: '*'
+        },
+        {
+            name: 'Access-Control-Allow-Methods',
+            value: 'PUT, GET, POST, DELETE, OPTIONS, HEAD, PATCH'
+        },
+        {
+            name: 'Access-Control-Allow-Headers',
+            value: 'Content-Type'
+        }
+    ],
     ssl_protocol: {
         active: false,
         key: 'touch/key.pem',
