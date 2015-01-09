@@ -9,6 +9,7 @@ var namespaces = require('ks-npm');
 var bundle = Object.keys(namespaces);
 var tasks = [];
 
+
 bundle.forEach(function(taskName) {
 	tasks.push(taskName);
 	gulp.task(taskName, function() {
@@ -22,7 +23,6 @@ bundle.forEach(function(taskName) {
 			.pipe(gulp.dest(req));
 	});
 });
-
 
 
 gulp.task('coffee', tasks,function () {
@@ -69,7 +69,6 @@ gulp.task('remove', function () {
 gulp.task('shutdown', ['remove'], function () {
 	return k.shutdown(exitCode);
 });
-
 
 
 gulp.start('konsole');
