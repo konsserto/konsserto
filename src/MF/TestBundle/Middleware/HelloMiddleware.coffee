@@ -1,7 +1,8 @@
-Middleware = use('@Konsserto/Bundle/FrameworkBundle/Middleware/Middleware')
+Middleware = use('@Konsserto/Component/Middleware/Middleware')
 
 class HelloMiddleware extends Middleware
 
   helloAction: ()->
-    console.log 'toto'
-    @next()
+    console.log 'fion'
+
+module.exports = HelloMiddleware
