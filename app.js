@@ -3,7 +3,7 @@ var coffee = require('gulp-coffee');
 var plumber = require('gulp-plumber');
 var clean = require('gulp-clean');
 var nodemon = require('gulp-nodemon');
-var CONFIG = require('./app/config/config')
+var CONFIG = require('./app/config/config');
 var mocha = require('gulp-mocha');
 var k, input;
 
@@ -14,7 +14,7 @@ var tasks_ignore = [''];
 
 bundle.forEach(function (taskName) {
     if (tasks_ignore.indexOf(taskName) < 0) {
-        tasks.push(taskName)
+        tasks.push(taskName);
         gulp.task(taskName, function () {
             var req = namespaces[taskName];
             var ext = req + '**/*.coffee'
@@ -50,25 +50,25 @@ gulp.task('coffee', tasks, function () {
                 console.log(err);
             }}))
         .pipe(coffee({bare: true}))
-        .pipe(gulp.dest('src'))
+        .pipe(gulp.dest('src'));
 });
 
 
 gulp.task('kernel', ['coffee'], function () {
     var Kernel = require('konsserto');
-    var ArgvInput = use('@Konsserto/Component/Console/Input/ArgvInput')
-    var InputOption = use('@Konsserto/Component/Console/Input/InputOption')
-    var InputDefinition = use('@Konsserto/Component/Console/Input/InputDefinition')
-    var definition = new InputDefinition([new InputOption('--nodemon', '-n'), new InputOption('--keep-js', '-k')])
-    input = new ArgvInput(process.argv, definition, null, true)
+    var ArgvInput = use('@Konsserto/Component/Console/Input/ArgvInput');
+    var InputOption = use('@Konsserto/Component/Console/Input/InputOption');
+    var InputDefinition = use('@Konsserto/Component/Console/Input/InputDefinition');
+    var definition = new InputDefinition([new InputOption('--nodemon', '-n'), new InputOption('--keep-js', '-k')]);
+    input = new ArgvInput(process.argv, definition, null, true);
 
     if (input.getOption('nodemon')) {
         nodemon({ script: 'start.js', ext: 'html twig css less coffee', ignore: ['node_modules/*', '*.js'] })
             .on('change', ['coffee'])
             .on('restart', function () {
-                console.log('Konsserto restarted !')
+                console.log('Konsserto restarted !');
             }
-        )
+        );
     } else {
         k = new Kernel;
         configs = require('./app/config/config');
@@ -80,7 +80,7 @@ gulp.task('kernel', ['coffee'], function () {
 
         k.start(port);
         process.on('SIGINT', function () {
-            gulp.start('shutdown')
+            gulp.start('shutdown');
         });
     }
 });
