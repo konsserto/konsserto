@@ -1,4 +1,3 @@
-/app/config/config.js
 /node_modules/*
 !/node_modules/konsserto
 !/node_modules/ks-npm
