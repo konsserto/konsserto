@@ -1,5 +1,6 @@
 security = {
     global: {
+        xssProtection: false, // facultatif, par defaut à true
         headers_allowed: [
             {
                 name: 'Access-Control-Allow-Origin',
