@@ -20,7 +20,6 @@ security = {
         key: 'touch/key.pem',
         certificate: 'touch/cert.pem'
     }
-
 };
 
 module.exports = security;
