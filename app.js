@@ -3,7 +3,6 @@ var coffee = require('gulp-coffee');
 var plumber = require('gulp-plumber');
 var clean = require('gulp-clean');
 var nodemon = require('gulp-nodemon');
-var CONFIG = require('./app/config/config');
 var mocha = require('gulp-mocha');
 var k, input;
 
