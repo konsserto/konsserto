@@ -3,7 +3,7 @@ config =
     type: "both"
     config:
       extended: false
-  database:
+  database: # Optional at the basis, but mandatory when exploiting the EntityManager service
     driver: "mysql",
     host: "127.0.0.1",
     port: "3306",

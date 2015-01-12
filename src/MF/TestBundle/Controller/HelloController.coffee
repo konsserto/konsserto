@@ -1,5 +1,4 @@
 Controller = use('@Konsserto/Bundle/FrameworkBundle/Controller/Controller')
-q = use('q')
 
 class HelloController extends Controller
 
