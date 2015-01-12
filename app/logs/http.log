@@ -8,3 +8,6 @@
 127.0.0.1 - - [09/Jan/2015:14:26:53 +0000] "GET /home/marvin HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36"
 127.0.0.1 - - [09/Jan/2015:14:30:45 +0000] "GET /home/marvin HTTP/1.1" 500 2990 "-" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36"
 127.0.0.1 - - [09/Jan/2015:14:36:09 +0000] "GET /home/marvin HTTP/1.1" 500 2990 "-" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36"
+127.0.0.1 - - [12/Jan/2015:09:06:55 +0000] "GET /home/marvin HTTP/1.1" 200 6 "-" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36"
+127.0.0.1 - - [12/Jan/2015:09:06:55 +0000] "GET /favicon.ico HTTP/1.1" 404 - "-" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36"
+127.0.0.1 - - [12/Jan/2015:09:06:56 +0000] "GET /home/marvin HTTP/1.1" 200 6 "-" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36"

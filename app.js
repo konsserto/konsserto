@@ -59,7 +59,6 @@ gulp.task('kernel', ['coffee'], function () {
     } else {
         k = new Kernel;
         configs = require('./app/config/config');
-
         port = 3000;
         if (configs.port) {
             port = configs.port;
@@ -85,7 +84,7 @@ gulp.task('remove', function () {
         'app/**/*.js',
         '!app/resources',
         //require('ks-npm')['Konsserto']+'**/*.js',
-        '!src/**/Resources/**/*.js'
+        '!src/**/Resources/views/*.js',
     ], {read: false}).pipe(clean());
 });
 

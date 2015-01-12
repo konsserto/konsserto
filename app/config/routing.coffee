@@ -2,7 +2,7 @@ routingConfiguration =
   routes: [
     {
       name: 'mf_test_import',
-      resource: '@MF/TestBundle/Resources/config/routing.js'
+      resource: '@MF/TestBundle/Resources/config/routing'
     }
   ],
   middlewares: [
@@ -10,7 +10,7 @@ routingConfiguration =
   sockets: [
     {
       name: 'mf_test_import',
-      resource: '@MF/TestBundle/Resources/config/socket.js'
+      resource: '@MF/TestBundle/Resources/config/socket'
     }
   ]
 
