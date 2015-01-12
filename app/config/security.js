@@ -1,5 +1,5 @@
 security = {
-    xssProtection: false, // facultatif, par defaut à true
+    xssProtection: true, // facultatif, par defaut à true
     headers_allowed: [
         {
             name: 'Access-Control-Allow-Origin',
@@ -15,7 +15,7 @@ security = {
         }
     ],
     ssl_protocol: {
-        active: false,
+        active: true, // facultatif, par defaut à false
         key: 'touch/key.pem',
         certificate: 'touch/cert.pem'
     }
