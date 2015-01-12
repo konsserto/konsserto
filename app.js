@@ -31,13 +31,13 @@ bundle.forEach(function (taskName) {
 
 gulp.task('coffee', tasks, function () {
     process.stdin.pause();
-    return gulp.src(['src/**/*.coffee'])
+    return gulp.src(['**/*.coffee','!node_modules/'])
         .pipe(plumber({
             errorHandler: function (err) {
                 console.log(err);
             }}))
         .pipe(coffee({bare: true}))
-        .pipe(gulp.dest('src'));
+        .pipe(gulp.dest(''));
 });
 
 
