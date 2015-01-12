@@ -21,6 +21,7 @@ module.exports = routingConfiguration;
 ### Middleware example
 {
     name: "MyMiddleware",
-    middleware: "MFTestBundle:Hello:hello"
+    middleware: "MFTestBundle:Hello:hello",
+    pattern:"/user"
 }
-  ###
+###
