@@ -6,10 +6,10 @@ config =
   database:
     driver: "mysql",
     host: "127.0.0.1",
-    port: "3700",
-    name: "test",
+    port: "3306",
+    name: "symfony",
     user: "root",
-    password: "root",
+    password: "",
   loggerHTTP: true, # Optional, default : false
   port: 3000, # Optional, default : 3000
   templateEngine: 'twig', # Optional, default : twig
