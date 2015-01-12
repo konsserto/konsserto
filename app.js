@@ -82,6 +82,8 @@ gulp.task('remove', function () {
         return true;
     return gulp.src([
         'src/**/*.js',
+        'app/**/*.js',
+        '!app/resources',
         //require('ks-npm')['Konsserto']+'**/*.js',
         '!src/**/Resources/**/*.js'
     ], {read: false}).pipe(clean());
