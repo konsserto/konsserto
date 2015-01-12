@@ -31,7 +31,7 @@ bundle.forEach(function (taskName) {
 
 gulp.task('coffee', tasks, function () {
     process.stdin.pause();
-    return gulp.src(['**/*.coffee','!node_modules/'])
+    return gulp.src(['**/*.coffee', '!node_modules/'])
         .pipe(plumber({
             errorHandler: function (err) {
                 console.log(err);
@@ -82,6 +82,7 @@ gulp.task('remove', function () {
     return gulp.src([
         'src/**/*.js',
         'app/**/*.js',
+        'test/**/*.js',
         '!app/resources',
         //require('ks-npm')['Konsserto']+'**/*.js',
         '!src/**/Resources/views/*.js',
