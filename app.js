@@ -19,12 +19,6 @@ bundle.forEach(function (taskName) {
             var ext = req + '**/*.coffee'
             return gulp.src(ext)
                 .pipe(plumber({
-                    /**
-                     * Description
-                     * @method errorHandler
-                     * @param {} err
-                     * @return
-                     */
                     errorHandler: function (err) {
                         console.log(err);
                     }}))
@@ -39,12 +33,6 @@ gulp.task('coffee', tasks, function () {
     process.stdin.pause();
     return gulp.src(['src/**/*.coffee'])
         .pipe(plumber({
-            /**
-             * Description
-             * @method errorHandler
-             * @param {} err
-             * @return
-             */
             errorHandler: function (err) {
                 console.log(err);
             }}))
