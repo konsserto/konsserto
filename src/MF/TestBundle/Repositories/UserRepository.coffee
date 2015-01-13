@@ -1,8 +1,9 @@
 Repository = use('@Konsserto/Component/EntityManager/Repository')
+User = use('/src/MF/TestBundle/Entities/User')
 
 class UserRepository extends Repository
 
   constructor: ()->
-    super('user')
+    super(User.TABLE_NAME)
 
 module.exports = UserRepository

@@ -4,10 +4,10 @@ config =
     config:
       extended: false
   database: # Optional at the basis, but mandatory when exploiting the EntityManager service
-    driver: "mysql",
+    driver: "mongodb",
     host: "127.0.0.1",
-    port: "3306",
-    name: "symfony",
+    port: "27017",
+    name: "test",
     user: "root",
     password: "",
   loggerHTTP: true, # Optional, default : false
