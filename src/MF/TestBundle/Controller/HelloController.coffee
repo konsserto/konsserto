@@ -13,9 +13,9 @@ class HelloController extends Controller
     user.addCar(new Car('BMW'))
 
     em.persist(user)
-    promise = em.flush()
-    promise.then (value)->
-      console.log value
+
+    em.flush()
+
     @render 'MFTestBundle:Hello:index.html.twig', {name: name}
 
 module.exports = HelloController

@@ -1,5 +1,3 @@
-Car = use('/src/MF/TestBundle/Entities/Car')
-
 class User
 
   @TABLE_NAME = 'user'
@@ -9,13 +7,13 @@ class User
     @attributes = {
       password:
         value: password
-        type: 'String'
+        type: 'string'
       username:
         value: username
-        type: 'String'
+        type: 'string'
       cars:
         value: []
-        type: Car
+        type: 'Car'
     }
 
   addCar: (newCar)->
