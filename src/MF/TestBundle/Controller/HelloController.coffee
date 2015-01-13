@@ -4,10 +4,12 @@ class HelloController extends Controller
 
   indexAction: (name) =>
     em = @get("EntityManager")
+    promise = em.getRepository('MF:TestBundle:UserRepository').getByCriteria({username: 'admin'})
 
-    em.getRepository('MF:TestBundle:UserRepository').getAll((result)=>
-      @render('MFTestBundle:Hello:index.html.twig', {name: result[0].username})
-    )
+    promise.then (value) =>
+      @render('MFTestBundle:Hello:index.html.twig', {name: name})
 
+    promise.catch (err) ->
+      console.log err
 
 module.exports = HelloController
