@@ -10,8 +10,6 @@ class HelloController extends Controller
     promise.then (value) =>###
     user = new User(name, 'password1')
     user.addCar(new Car('Mercedes'))
-    user.addCar(new Car('BMW'))
-
     em.persist(user)
     em.flush()
 
