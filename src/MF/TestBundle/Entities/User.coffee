@@ -2,9 +2,12 @@ class User
 
   @TABLE_NAME = 'user'
 
-  constructor: (username, password)->
+  constructor: (username, password, id = null)->
     @repository = 'MF:TestBundle:UserRepository'
     @attributes = {
+      _id:
+        value: id
+        type: 'string'
       password:
         value: password
         type: 'string'

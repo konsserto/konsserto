@@ -13,7 +13,6 @@ class HelloController extends Controller
     user.addCar(new Car('BMW'))
 
     em.persist(user)
-
     em.flush()
 
     @render 'MFTestBundle:Hello:index.html.twig', {name: name}
