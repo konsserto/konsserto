@@ -43,6 +43,6 @@ class User
     return @attributes.username.value
 
   getTableName: ()->
-    return @tableName
+    return User.TABLE_NAME
 
 module.exports = User
