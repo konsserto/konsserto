@@ -11,12 +11,14 @@ var bundle = Object.keys(namespaces);
 var tasks = [];
 var tasks_ignore = [''];
 
-bundle.forEach(function (taskName) {
+ /*
+ Useless ?
+ bundle.forEach(function (taskName) {
     if (tasks_ignore.indexOf(taskName) < 0) {
         tasks.push(taskName);
         gulp.task(taskName, function () {
             var req = namespaces[taskName];
-            var ext = req + '**/*.coffee'
+            var ext = req + '.coffee'
             return gulp.src(ext)
                 .pipe(plumber({
                     errorHandler: function (err) {
@@ -26,18 +28,18 @@ bundle.forEach(function (taskName) {
                 .pipe(gulp.dest(req));
         });
     }
-});
+});*/
 
 
 gulp.task('coffee', tasks, function () {
     process.stdin.pause();
-    return gulp.src(['**/*.coffee', '!node_modules/'])
+    return gulp.src(['**/*.coffee', '!./node_modules/'])
         .pipe(plumber({
             errorHandler: function (err) {
                 console.log(err);
             }}))
         .pipe(coffee({bare: true}))
-        .pipe(gulp.dest(''));
+        .pipe(gulp.dest('dist/'));
 });
 
 
@@ -58,7 +60,7 @@ gulp.task('kernel', ['coffee'], function () {
         );
     } else {
         k = new Kernel;
-        configs = require('./app/config/config');
+        configs = require('./dist/app/config/config');
         port = 3000;
         if (configs.port) {
             port = configs.port;
@@ -72,7 +74,7 @@ gulp.task('kernel', ['coffee'], function () {
 });
 
 gulp.task('mocha', ['kernel'], function () {
-    return gulp.src('./test/**/*.js', {read: false})
+    return gulp.src('./dist/test/**/*.js', {read: false})
         .pipe(mocha({reporter: 'list'}));
 });
 
