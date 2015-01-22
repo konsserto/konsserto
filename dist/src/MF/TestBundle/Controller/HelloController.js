@@ -18,16 +18,6 @@ HelloController = (function(_super) {
   }
 
   HelloController.prototype.indexAction = function(name) {
-    var em, user;
-    em = this.get('EntityManager');
-
-    /*promise = em.getRepository('MF:TestBundle:UserRepository').getByCriteria {username: 'admin', id: 1}
-    promise.then (value) =>
-     */
-    user = new User(name, 'password1');
-    user.addCar(new Car('Mercedes'));
-    em.persist(user);
-    em.flush();
     return this.render('MFTestBundle:Hello:index.html.twig', {
       name: name
     });

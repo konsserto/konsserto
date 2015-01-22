@@ -11,24 +11,24 @@ var bundle = Object.keys(namespaces);
 var tasks = [];
 var tasks_ignore = [''];
 
- /*
+/*
  Useless ?
  bundle.forEach(function (taskName) {
-    if (tasks_ignore.indexOf(taskName) < 0) {
-        tasks.push(taskName);
-        gulp.task(taskName, function () {
-            var req = namespaces[taskName];
-            var ext = req + '.coffee'
-            return gulp.src(ext)
-                .pipe(plumber({
-                    errorHandler: function (err) {
-                        console.log(err);
-                    }}))
-                .pipe(coffee({bare: true}))
-                .pipe(gulp.dest(req));
-        });
-    }
-});*/
+ if (tasks_ignore.indexOf(taskName) < 0) {
+ tasks.push(taskName);
+ gulp.task(taskName, function () {
+ var req = namespaces[taskName];
+ var ext = req + '.coffee'
+ return gulp.src(ext)
+ .pipe(plumber({
+ errorHandler: function (err) {
+ console.log(err);
+ }}))
+ .pipe(coffee({bare: true}))
+ .pipe(gulp.dest(req));
+ });
+ }
+ });*/
 
 
 gulp.task('coffee', tasks, function () {
@@ -78,20 +78,8 @@ gulp.task('mocha', ['kernel'], function () {
         .pipe(mocha({reporter: 'list'}));
 });
 
-gulp.task('remove', function () {
-    if (input.getOption('keep-js'))
-        return true;
-    return gulp.src([
-        'src/**/*.js',
-        'app/**/*.js',
-        'test/**/*.js',
-        '!app/resources',
-        //require('ks-npm')['Konsserto']+'**/*.js',
-        '!src/**/Resources/views/*.js',
-    ], {read: false}).pipe(clean());
-});
 
-gulp.task('shutdown', ['remove'], function () {
+gulp.task('shutdown', function () {
     return k.shutdown(0);
 });
 
