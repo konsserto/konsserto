@@ -17,6 +17,8 @@ class User
       value: []
       type: 'Car'
 
+  addCar: (car)->
+    @cars.value.push car
 
   getRepository: () ->
     return @repository

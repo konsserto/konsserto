@@ -26,6 +26,10 @@ User = (function() {
     };
   }
 
+  User.prototype.addCar = function(car) {
+    return this.cars.value.push(car);
+  };
+
   User.prototype.getRepository = function() {
     return this.repository;
   };

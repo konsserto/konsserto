@@ -7,7 +7,10 @@ class HelloController extends Controller
   indexAction: (name) =>
     @em = @get('EntityManager')
 
+    car = new Car('bmw')
+    car.id.value = 1
     user = new User(name, 'password')
+    user.addCar(car)
     @em.persist(user)
     @em.flush()
 

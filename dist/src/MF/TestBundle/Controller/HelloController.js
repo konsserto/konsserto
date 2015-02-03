@@ -18,9 +18,12 @@ HelloController = (function(_super) {
   }
 
   HelloController.prototype.indexAction = function(name) {
-    var user;
+    var car, user;
     this.em = this.get('EntityManager');
+    car = new Car('bmw');
+    car.id.value = 1;
     user = new User(name, 'password');
+    user.addCar(car);
     this.em.persist(user);
     this.em.flush();
     return this.render('MFTestBundle:Hello:index.html.twig', {
