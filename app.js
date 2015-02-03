@@ -33,7 +33,7 @@ var tasks_ignore = [''];
 
 gulp.task('coffee', tasks, function () {
     process.stdin.pause();
-    return gulp.src(['**/*.coffee', '!./node_modules/'])
+    return gulp.src(['**/*.coffee', './node_modules/'])
         .pipe(plumber({
             errorHandler: function (err) {
                 console.log(err);

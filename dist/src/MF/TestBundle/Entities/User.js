@@ -8,54 +8,30 @@ User = (function() {
       id = null;
     }
     this.repository = 'MF:TestBundle:UserRepository';
-    this.attributes = {
-      _id: {
-        value: id,
-        type: 'string'
-      },
-      password: {
-        value: password,
-        type: 'string'
-      },
-      username: {
-        value: username,
-        type: 'string'
-      },
-      cars: {
-        value: [],
-        type: 'Car'
-      }
+    this.id = {
+      value: id,
+      type: 'string'
+    };
+    this.password = {
+      value: password,
+      type: 'string'
+    };
+    this.username = {
+      value: username,
+      type: 'string'
+    };
+    this.cars = {
+      value: [],
+      type: 'Car'
     };
   }
-
-  User.prototype.addCar = function(newCar) {
-    return this.attributes.cars.value.push(newCar);
-  };
-
-  User.prototype.getCars = function() {
-    return this.attributes.cars.value;
-  };
-
-  User.prototype.setPassword = function(password) {
-    this.attributes.password.value = password;
-    return this;
-  };
-
-  User.prototype.getPassword = function() {
-    return this.attributes.password.value;
-  };
 
   User.prototype.getRepository = function() {
     return this.repository;
   };
 
-  User.prototype.setUsername = function(username) {
-    this.attributes.username.value = username;
-    return this;
-  };
-
   User.prototype.getUsername = function() {
-    return this.attributes.username.value;
+    return this.username.value;
   };
 
   User.prototype.getTableName = function() {
