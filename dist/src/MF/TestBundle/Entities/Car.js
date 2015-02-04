@@ -1,11 +1,11 @@
 var Car;
 
 Car = (function() {
-  Car.TABLE_NAME = 'user';
+  Car.TABLE_NAME = 'car';
 
-  function Car(name) {
+  function Car(name, id) {
     this.id = {
-      value: 4,
+      value: id,
       type: 'string'
     };
     this.name = {
@@ -16,6 +16,10 @@ Car = (function() {
 
   Car.prototype.getName = function() {
     return this.name.value;
+  };
+
+  Car.prototype.getTableName = function() {
+    return Car.TABLE_NAME;
   };
 
   return Car;

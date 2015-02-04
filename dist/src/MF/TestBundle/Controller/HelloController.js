@@ -21,7 +21,6 @@ HelloController = (function(_super) {
     var car, user;
     this.em = this.get('EntityManager');
     car = new Car('bmw');
-    car.id.value = 1;
     user = new User(name, 'password');
     user.addCar(car);
     this.em.persist(user);
