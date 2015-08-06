@@ -1,8 +1,13 @@
 Konsserto
 =========
 
-A nice NodeJS Framework, really !
+The NodeJS Superhighway !
 
-We need you ! Feel free to contact us at: konsserto@gmail.com
+White board demo: 
+  - Preview: http://konsserto.com/board/
+  - Code: http://konsserto.com/examples/white-board
 
-More info: http://www.konsserto.com
+Chat demo: 
+  - Preview: http://konsserto.com/chat/
+  - Code: http://konsserto.com/examples/chat
+
